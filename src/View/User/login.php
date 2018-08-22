@@ -7,10 +7,11 @@
         <title>Document</title>
     </head>
     <body>
-        <form method="post" action="index.php">
+        <form method="post" action="">
             Email : <input type="email" name="mail"/><br/>
             Mot de passe : <input type="password" name="password"/><br/>
             <input type="submit" value="valider"/><br/>
-        </form> 
+            <?php echo  "Je suis sur mon login"?>
+        </form>
     </body>
 </html>
