@@ -17,7 +17,6 @@ class Controller
             ob_start();
             include(implode(DIRECTORY_SEPARATOR, [dirname(__DIR__), 'src', 'View', 'index']) . '.php');
             self::$_render = ob_get_clean();
-//             echo "Babsy";
         }
     }  
     public function __destruct() {
