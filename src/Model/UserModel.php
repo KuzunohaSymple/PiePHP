@@ -1,5 +1,5 @@
 <?php
-class UserModel extends Database  {
+class UserModel extends Entity {
     private $email;
     private $password;
 

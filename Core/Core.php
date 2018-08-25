@@ -8,26 +8,21 @@ class Core {
         $url = str_replace(BASE_URI, '', $_SERVER['REQUEST_URI']);
         // var_dump($url);
         $controller = \Router::get($url);
+//        var_dump($url);
         //controller == quelquechose
-        $controllerName = ucfirst($controller['controller']) . 'Controller';
-        // var_dump($controllerName);
-        $new_controller = new $controllerName;
-        $new_controller->{$controller['action'] . 'Action'}();
+
+            $controllerName = ucfirst($controller['controller']) . 'Controller';
+            // var_dump($controllerName);
+            $new_controller = new $controllerName;
+            $new_controller->{$controller['action'] . 'Action'}();
+//        $controllerName = ucfirst($controller['controller']) . 'Controller';
+//        // var_dump($controllerName);
+//        $new_controller = new $controllerName;
+//        $new_controller->{$controller['action'] . 'Action'}();
         //sinon
             //error 404
     }
 }
 
-include "Request.php";
 include "ORM.php";
-//$foo = new \Request();
-
-//class Request {
-//
-//    public $nom;
-//
-//    public function __construct($nom = null) {
-//        $this->nom = stripslashes(trim(htmlspecialchars($nom)));
-//    }
-//}
 
