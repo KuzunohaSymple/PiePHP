@@ -10,11 +10,19 @@ class Core {
         $controller = \Router::get($url);
 //        var_dump($url);
         //controller == quelquechose
-
-            $controllerName = ucfirst($controller['controller']) . 'Controller';
-            // var_dump($controllerName);
-            $new_controller = new $controllerName;
-            $new_controller->{$controller['action'] . 'Action'}();
+            if (method_exists(ucfirst($controller['controller']) . 'Controller', $controller['action'] . 'Action')) {
+                $controllerName = ucfirst($controller['controller']) . 'Controller';
+                // var_dump($controllerName);
+                $new_controller = new $controllerName;
+                $new_controller->{$controller['action'] . 'Action'}();
+            }
+            else {
+                echo "error 404 method not found";
+            }
+//            $controllerName = ucfirst($controller['controller']) . 'Controller';
+//            // var_dump($controllerName);
+//            $new_controller = new $controllerName;
+//            $new_controller->{$controller['action'] . 'Action'}();
 //        $controllerName = ucfirst($controller['controller']) . 'Controller';
 //        // var_dump($controllerName);
 //        $new_controller = new $controllerName;

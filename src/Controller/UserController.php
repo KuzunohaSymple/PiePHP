@@ -19,16 +19,16 @@ class UserController extends Controller
     }
 
     public function errorAction() {
-      echo "Error 404";
+      echo "Error 404 url not found";
     }
 
     public function registerAction() {
 
-//        if (isset($_POST['mail']) && isset($_POST['password'])) {
-//            $insert_into = new UserModel($_POST['mail'], $_POST['password']);
-//            $insert_into->save();
-//            $this->render("login");
-//        }
+        if (isset($_POST['mail']) && isset($_POST['password'])) {
+            $insert_into = new UserModel($_POST['mail'], $_POST['password']);
+            $insert_into->save();
+            $this->render("login");
+        }
 
 //        $params = $this->request->getQueryParams()
 
